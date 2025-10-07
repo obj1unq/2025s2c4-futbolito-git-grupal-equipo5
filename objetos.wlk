@@ -39,8 +39,9 @@ object lionel {
     } else {
         esTitular = true
     }
-	}
 	
+	}
+
 	method levantarla(pelota) {
 		if(self.position() == pelota.position()){
 			pelota.levantarse()
