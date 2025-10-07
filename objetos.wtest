@@ -24,4 +24,9 @@ describe "Taquito" {
         lionel.darPaseTaquito()
         assert.equals(game.at(0, 5), pelota.position())
     }   
+
+    test "si lionel no esta en el borde izquierdo no se puede cambiar de camiseta" {
+      lionel.position(game.at(2,5))
+      assert.throwsException({ lionel.cambiarCamiseta() })
+    }
 }
