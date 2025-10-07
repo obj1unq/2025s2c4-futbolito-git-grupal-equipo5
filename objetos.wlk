@@ -23,6 +23,16 @@ object lionel {
 		}
 	}
 	
+	method validarQuePuedoPatear() {
+		if (pelota.position() != position) {
+			self.error("No estoy sobre la pelota")
+		}
+	}
+
+	method darPaseTaquito() {
+		self.validarQuePuedoPatear()
+		pelota.retroceder(2)
+	}
 }
 
 
@@ -33,5 +43,9 @@ object pelota {
 	method levantarse() {
 	  position = position.up(1)
 	  game.schedule(2000, {position =position.down(1)})
+	}
+	
+	method retroceder(cantPosiciones) {
+		position = game.at((position.x() - 2).max(0), position.y())
 	}
 }
