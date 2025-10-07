@@ -17,10 +17,21 @@ object lionel {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
 	
+	method patear(){
+		if (position == pelota.position()){
+			pelota.mover()
+		}
+
+	}
+
 }
 
 
 object pelota {
 	const property image="pelota.png"
-	var property position = game.at(5,5)	
+	var property position = game.at(5,5)
+
+	method mover(){
+		position = game.at((game.width() - 1).min(position.x() + 3), position.y())
+	}	
 }
