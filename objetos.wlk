@@ -33,6 +33,14 @@ object lionel {
 		self.validarQuePuedoPatear()
 		pelota.retroceder(2)
 	}
+	
+	method patear(){
+		if (position == pelota.position()){
+			pelota.mover()
+		}
+
+	}
+
 }
 
 
@@ -48,4 +56,8 @@ object pelota {
 	method retroceder(cantPosiciones) {
 		position = game.at((position.x() - 2).max(0), position.y())
 	}
+
+	method mover(){
+		position = game.at((game.width() - 1).min(position.x() + 3), position.y())
+	}	
 }

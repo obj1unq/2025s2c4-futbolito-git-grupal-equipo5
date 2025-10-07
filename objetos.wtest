@@ -25,3 +25,50 @@ describe "Taquito" {
         assert.equals(game.at(0, 5), pelota.position())
     }   
 }
+
+
+describe "test de patear"{
+
+
+    method initialize(){
+        game.clear()
+		game.addVisual(lionel)
+	    game.addVisual(pelota)
+	    game.cellSize(40)
+	    game.width(15)
+	    game.height(10)
+	    keyboard.enter().onPressDo({game.say(lionel, "Vamos Argentina!")})
+	    keyboard.left().onPressDo({lionel.retroceder()})
+	    keyboard.right().onPressDo({lionel.avanzar()})
+
+	    keyboard.p().onPressDo({lionel.patear()})
+
+	    game.start()
+	}
+
+
+    test "ir a la pelota y patear una vez"{
+        lionel.avanzar()
+        lionel.avanzar()
+        lionel.patear()
+        assert.equals(game.at(8,5), pelota.position())
+    }
+
+	test "patear 3 veces " {
+    	lionel.avanzar()
+		lionel.avanzar()
+		lionel.patear()
+		lionel.avanzar()
+    	lionel.avanzar()
+		lionel.avanzar()
+		lionel.patear()
+		lionel.avanzar()
+    	lionel.avanzar()
+		lionel.avanzar()
+		lionel.patear()
+		assert.equals(game.at((game.width() - 1), 5), pelota.position())
+
+	}
+
+
+}
