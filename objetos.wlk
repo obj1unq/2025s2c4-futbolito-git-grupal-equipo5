@@ -41,10 +41,24 @@ object lionel {
     }
 	}
 	
+	method validarQuePuedoPatear() {
+		if (pelota.position() != position) {
+			self.error("No estoy sobre la pelota")
+		}
+	}
+
+	method darPaseTaquito() {
+		self.validarQuePuedoPatear()
+		pelota.retroceder(2)
+	}
 }
 
 
 object pelota {
 	const property image="pelota.png"
 	var property position = game.at(5,5)	
+
+	method retroceder(cantPosiciones) {
+		position = game.at((position.x() - 2).max(0), position.y())
+	}
 }

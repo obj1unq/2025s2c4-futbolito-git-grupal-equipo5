@@ -1,0 +1,27 @@
+import objetos.*
+import wollok.game.*
+
+describe "Taquito" {
+
+    method initialize() {
+        game.clear()
+        game.width(15)
+	    game.height(10)
+    }
+
+    test "Si lionel no está sobre la pelota, no puede hacer taquito" {
+        assert.throwsException({lionel.darPaseTaquito()})
+    }
+
+    test "Si lionel está sobre la pelota, puede hacer taquito" {
+        lionel.position(pelota.position())
+        assert.doesNotThrowException({lionel.darPaseTaquito()})
+    }
+
+    test "La pelota nunca se va a x negativo" {
+        pelota.position(game.at(1, pelota.position().y()))
+        lionel.position(pelota.position())
+        lionel.darPaseTaquito()
+        assert.equals(game.at(0, 5), pelota.position())
+    }   
+}
