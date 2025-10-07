@@ -26,8 +26,7 @@ Validar que la pelota se encuentre en la misma posicion que Lionel.
 - **Taquito**: Hacer Lionel de un pase atrás al apretar la tecla *t*: La pelota se mueve 2 posiciones a la izquierda. (o lo máximo que se pueda mover)
   Tip: usar el método max de los números entre el x actual de la pelota - 2 y 0.
   Validar que la pelota se encuentre en la misma posición que Lionel.
-- **Camiseta** Hacer que Lionel cambie su camiseta al apretar la tecla *c*. Si tiene la camiseta titular pasará a 
-usar la suplente y viceversa. Validar que solo se puede realizar si lionel está sobre el borde izquierdo (El x de la posición debe ser 0)
+- **Camiseta** Hacer que Lionel cambie su camiseta al apretar la tecla *c*. Si tiene la camiseta titular pasará a usar la suplente y viceversa. Validar que solo se puede realizar si lionel está sobre el borde izquierdo (El x de la posición debe ser 0)
 - **Levantarla** Hacer que la pelota suba por (eje y) 1 posición, y luego de 2 segundos baje nuevamente a dónde estaba. Tip: Usar un scheduler. Validar que la pelota se encuentre en la misma posicion que Lionel.
 - **Ir saque lateral** Hacer que la pelota y Leo aparezcan en el borde inferior en la misma posición ambosa, manteniendo la distancia horizontal de la pelota (eje x). Validar que Leo no se encuentre en la misma posición que la pelota.
 
